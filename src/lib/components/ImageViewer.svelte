@@ -66,15 +66,15 @@
       // Use mipmaps for better scaling on different devices
       texture.generateMipmaps = true;
       // Apply different texture settings for desktop
-      if (window.innerWidth >= 768) {
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-      } else {
-        texture.minFilter = THREE.LinearMipmapLinearFilter; // Use nearest neighbor filtering for sharp pixels
-        // texture.magFilter = THREE.LinearFilter; // Use nearest neighbor filtering for sharp pixels
-        // texture.generateMipmaps = false; // Disable mipmaps to prevent blurring
-        // texture.anisotropy = renderer.capabilities.getMaxAnisotropy(); // Keep max anisotropy for viewing angles
-      }
+      // if (window.innerWidth >= 768) {
+      //   texture.minFilter = THREE.LinearFilter;
+      //   texture.magFilter = THREE.LinearFilter;
+      // } else {
+      //   texture.minFilter = THREE.LinearMipmapLinearFilter; // Use nearest neighbor filtering for sharp pixels
+      //   // texture.magFilter = THREE.LinearFilter; // Use nearest neighbor filtering for sharp pixels
+      //   // texture.generateMipmaps = false; // Disable mipmaps to prevent blurring
+      //   // texture.anisotropy = renderer.capabilities.getMaxAnisotropy(); // Keep max anisotropy for viewing angles
+      // }
 
       // Apply anisotropic filtering for smoother textures
       // const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -86,7 +86,7 @@
       }
 
       // Create procedural dots texture
-      const noiseSize = 256;
+      const noiseSize = 10;
       const noiseData = new Uint8Array(noiseSize * noiseSize);
       const dotSpacing = 8; // Increased spacing to reduce noise
       const dotSize = 0.5; // Reduced size to make dots smaller
