@@ -71,7 +71,7 @@
       <div class="text-red-700">Please enter a valid Github username</div>
     {/if}
     <div class="text-primary-white flex flex-row text-body font-bold">
-      <div class="mr-1">{cardCount}+</div>
+      <div class="mr-1 font-bold text-teal-500">{cardCount}+</div>
       cards generated
     </div>
   </div>

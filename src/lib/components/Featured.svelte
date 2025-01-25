@@ -9,17 +9,17 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-2 py-2 mx-0">
     <img
       src="/featured_1.png"
-      class="w-full min-w-[240px] max-w-[320px] md:max-w-[480px]"
+      class="w-full min-w-[240px] max-w-[300px] md:max-w-[400px]"
       alt="Connect your Github account"
     />
     <img
       src="/featured_2.png"
-      class="w-full min-w-[240px] max-w-[320px] md:max-w-[480px]"
+      class="w-full min-w-[240px] max-w-[300px] md:max-w-[400px]"
       alt="Generate your card"
     />
     <img
       src="/featured_3.png"
-      class="w-full min-w-[240px] max-w-[320px] md:max-w-[480px]"
+      class="w-full min-w-[240px] max-w-[300px] md:max-w-[400px]"
       alt="Share with friends"
     />
   </div>
