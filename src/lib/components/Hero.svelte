@@ -111,7 +111,9 @@
           Download
           <DownloadIcon />
         </SecondaryButton>
-        <BuyMeCoffee />
+        <div class="md:hidden">
+          <BuyMeCoffee />
+        </div>
       </div>
     </div>
   {:else}
