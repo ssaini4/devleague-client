@@ -7,6 +7,7 @@
   import SecondaryButton from "./SecondaryButton.svelte";
   import Text from "./Text.svelte";
   import BuyMeCoffee from "./BuyMeCoffee.svelte";
+  import ProductHunt from "./ProductHunt.svelte";
   let username = $state("");
   let cardUrl = $state("");
   let isLoading = $state(false);
@@ -74,6 +75,7 @@
       <div class="mr-1 font-bold text-teal-500">{cardCount}+</div>
       cards generated
     </div>
+    <ProductHunt />
   </div>
 
   {#if isLoading}
