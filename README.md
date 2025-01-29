@@ -12,7 +12,7 @@
 
 Welcome to the frontend repository of [DevLeague.io](https://devleague.io), built using [Svelte](https://svelte.dev/), a modern UI framework that compiles components into highly efficient JavaScript at build time.
 
-
+For the backend, see [devleague-backend](https://github.com/ssaini4/devleague-backend).
 
 ## Table of Contents
 
