@@ -7,6 +7,7 @@
       name: "Saksham",
       role: "Developer",
       url: "https://www.linkedin.com/in/sakshamsaini/",
+      x: "https://x.com/theSakshamSaini",
     },
     {
       name: "Jess",
@@ -31,6 +32,14 @@
         >
           LinkedIn<ArrowRight />
         </a>
+        {#if member.x}
+          <a
+            class="py-1 flex flex-row gap-2 text-primary-text-light"
+            href={member.x}
+          >
+            Twitter/X<ArrowRight />
+          </a>
+        {/if}
       </div>
     {/each}
   </div>
