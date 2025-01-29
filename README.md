@@ -8,6 +8,8 @@
 <h1 align="center"><b>DevLeague</b></h1>
 <p align="center"><b>Your Github profile as a Pokemon card</b></p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96ccbc1c-54ae-42f5-aeed-db20f88bf57a/deploy-status)](https://app.netlify.com/sites/devleagueio/deploys)
+
 Welcome to the frontend repository of [DevLeague.io](https://devleague.io), built using [Svelte](https://svelte.dev/), a modern UI framework that compiles components into highly efficient JavaScript at build time.
 
 
