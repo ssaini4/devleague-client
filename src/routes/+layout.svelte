@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="min-h-screen max-w-screen px-10 md:px-32 py-28 bg-primary-container"
+  class="min-h-screen max-w-screen px-10 md:px-48 py-28 bg-primary-container"
 >
   <slot />
 </div>
