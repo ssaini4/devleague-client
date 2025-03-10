@@ -63,8 +63,8 @@
     cardCount = count;
     if (window.innerWidth < 768) {
       dimensions = {
-        height: `${window.innerHeight - 280}px`,
-        width: `${window.innerWidth - 10}px`,
+        height: `${window.innerHeight - 240}px`,
+        width: `${window.innerWidth - 4}px`,
       };
     }
   });
@@ -145,7 +145,8 @@
               <img
                 src={"/burning_laptop.gif"}
                 alt="Burning Laptop"
-                class="absolute -bottom-20 md:-bottom-14 my-[20px] mdleft-1/4 h-48 bg-transparent"
+                class="absolute -bottom-3 md:-bottom-14 my-[20px] md:left-1/4 h-48 bg-transparent"
+                style="animation: loop infinite 1s linear;"
               />
             </div>
           {/if}
