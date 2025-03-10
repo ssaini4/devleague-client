@@ -140,13 +140,12 @@
             height={dimensions.height}
             width={dimensions.width}
           />
-          {#if cardType === CardType.ROAST}
+          {#if cardType === CardType.ROAST && window.innerWidth > 768}
             <div class="relative">
               <img
                 src={"/burning_laptop.gif"}
                 alt="Burning Laptop"
-                class="absolute -bottom-3 md:-bottom-14 my-[20px] md:left-1/4 h-48 bg-transparent"
-                style="animation: loop infinite 1s linear;"
+                class="absolute -bottom-3 md:-bottom-14 my-[20px] -left-1 md:left-1/4 h-48 bg-transparent"
               />
             </div>
           {/if}
