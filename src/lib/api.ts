@@ -1,6 +1,17 @@
 import { PUBLIC_API_URL } from "$env/static/public";
 
-export const createCard = async ({ username }: { username: string }) => {
+export enum CardType {
+  NORMAL = "NORMAL",
+  ROAST = "ROAST",
+}
+
+export const createCard = async ({
+  username,
+  type = CardType.NORMAL,
+}: {
+  username: string;
+  type: CardType;
+}) => {
   try {
     const response = await fetch(
       `${PUBLIC_API_URL}/api/generate_card/${username}`,
@@ -10,6 +21,7 @@ export const createCard = async ({ username }: { username: string }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({ type }),
       }
     );
     if (response.ok) {

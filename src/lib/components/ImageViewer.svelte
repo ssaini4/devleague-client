@@ -56,7 +56,11 @@
     controls.enableZoom = false; // Disable zoom
     controls.enablePan = false; // Enable panning
     controls.panSpeed = 1.0; // Adjust pan speed as needed
-    camera.position.z = 10;
+    if (window.innerWidth >= 768) {
+      camera.position.z = 12;
+    } else {
+      camera.position.z = 10;
+    }
   }
 
   // Load and setup the image
