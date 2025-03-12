@@ -1,4 +1,17 @@
-<div class="flex justify-start items-center my-4">
+<script>
+  import { XIcon } from "lucide-svelte";
+
+  let isVisible = $state(true);
+
+  const closeAd = () => {
+    isVisible = false;
+  };
+</script>
+
+<div
+  class="flex justify-start items-center my-16 mx-20 max-w-[1200px]"
+  class:translate-y-[-100%]={!isVisible}
+>
   <a
     href="https://getdash.ai?utm_source=devleague&utm_medium=big_banner"
     target="_blank"

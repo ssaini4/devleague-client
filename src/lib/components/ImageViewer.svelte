@@ -57,7 +57,7 @@
     controls.enablePan = false; // Enable panning
     controls.panSpeed = 1.0; // Adjust pan speed as needed
     if (window.innerWidth >= 768) {
-      camera.position.z = 12;
+      camera.position.z = 9;
     } else {
       camera.position.z = 10;
     }

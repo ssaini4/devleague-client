@@ -19,7 +19,7 @@
   let cardCount = $state(0);
   let cardType = $state(CardType.NORMAL);
   let dimensions = $state({
-    height: "760px",
+    height: "600px",
     width: "680px",
   });
   let error = $state(false);
@@ -119,12 +119,8 @@
   </div>
   <div class="w-full flex md:mt-20">
     {#if isLoading}
-      <div class="self-center justify-center items-center w-full h-full my-10">
-        <img
-          src={"/loading.png"}
-          alt="Loading"
-          class="items-center mx-auto justify-center max-w-[320px]"
-        />
+      <div class="flex items-center justify-center w-full h-full min-h-[400px]">
+        <img src={"/loading.png"} alt="Loading" class="max-w-[320px]" />
         <!-- <Loader />
       <div class="text-primary-white text-center">
         {#key currentMessage}
@@ -134,6 +130,16 @@
       </div>
     {:else if isFinished}
       <div class="flex flex-col w-full">
+        <div class="flex items-center justify-center gap-4 py-1">
+          <Toggle
+            value={cardType}
+            onToggle={handleToggle}
+            options={[
+              { label: "NORMAL", value: CardType.NORMAL },
+              { label: "ROAST", value: CardType.ROAST },
+            ]}
+          />
+        </div>
         <div class="self-center items-center justify-center">
           <ImageViewer
             imageUrl={cardUrl}
@@ -145,21 +151,12 @@
               <img
                 src={"/burning_laptop.gif"}
                 alt="Burning Laptop"
-                class="absolute -bottom-3 md:-bottom-14 my-[20px] -left-1 md:left-1/4 h-48 bg-transparent"
+                class="absolute -bottom-3 md:-bottom-14 my-[20px] md:-left-24 h-48 bg-transparent"
               />
             </div>
           {/if}
         </div>
-        <div class="flex items-center justify-center gap-4 py-4">
-          <Toggle
-            value={cardType}
-            onToggle={handleToggle}
-            options={[
-              { label: "NORMAL", value: CardType.NORMAL },
-              { label: "ROAST", value: CardType.ROAST },
-            ]}
-          />
-        </div>
+
         <div
           class="w-full self-center flex flex-col md:flex-row gap-[6px] justify-center"
         >
@@ -178,11 +175,11 @@
         </div>
       </div>
     {:else}
-      <div class="flex flex-col w-full">
+      <div class="flex flex-col w-full mt-24">
         <div class="self-center items-center justify-center">
           <img
             src={"/empty_card.png"}
-            class="max-w-[320px] md:max-w-[480px]"
+            class="max-w-[320px] md:max-w-[420px]"
             alt="Empty card"
           />
         </div>
