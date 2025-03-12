@@ -8,7 +8,11 @@
   import Text from "./Text.svelte";
   import BuyMeCoffee from "./BuyMeCoffee.svelte";
   import ProductHunt from "./ProductHunt.svelte";
-  import { cardCache, updateCardCache } from "$lib/stores/cardStore";
+  import {
+    cardCache,
+    updateCardCache,
+    clearCacheForUsername,
+  } from "$lib/stores/cardStore";
   import Toggle from "./Toggle.svelte";
   import SmallAd from "./SmallAd.svelte";
 
@@ -26,6 +30,7 @@
   let cachedNormal = $state("");
   let cachedRoast = $state("");
   let currentCache = $state({});
+  let previousUsername = "";
 
   cardCache.subscribe((cache) => {
     currentCache = cache[username] || {};
@@ -35,12 +40,28 @@
     cachedNormal = currentCache[CardType.NORMAL] || "";
     cachedRoast = currentCache[CardType.ROAST] || "";
   });
-  const _createCard = async () => {
+
+  $effect(() => {
+    if (username !== previousUsername && previousUsername !== "") {
+      clearCacheForUsername(username);
+      currentCache = {};
+      cachedNormal = "";
+      cachedRoast = "";
+    }
+    previousUsername = username;
+  });
+
+  const _createCard = async (forceFresh = false) => {
     isFinished = false;
     isLoading = true;
 
+    if (forceFresh) {
+      clearCacheForUsername(username);
+      currentCache = {};
+    }
+
     const cachedUrl = currentCache[cardType];
-    if (cachedUrl) {
+    if (cachedUrl && !forceFresh) {
       cardUrl = cachedUrl;
       isFinished = true;
       isLoading = false;
@@ -71,7 +92,7 @@
 
   const keyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
-      _createCard();
+      _createCard(true);
     }
     if (error) {
       error = false;
@@ -105,7 +126,9 @@
         bind:value={username}
         onkeydown={keyDown}
       />
-      <PrimaryButton onclick={_createCard}>Create Card</PrimaryButton>
+      <PrimaryButton onclick={() => _createCard(true)}
+        >Create Card</PrimaryButton
+      >
     </div>
 
     {#if error}
@@ -163,7 +186,9 @@
           <!-- <div
           class="p-3 pl-5 w-full md:w-[50%] mx-auto flex items-center justify-center flex-row h-[60px] rounded-md min-w-[150px] gap-[4px]"
         > -->
-          <PrimaryButton onclick={_createCard}>New Card</PrimaryButton>
+          <PrimaryButton onclick={() => _createCard(true)}
+            >New Card</PrimaryButton
+          >
           <!-- </div> -->
           <SecondaryButton onclick={() => window.open(cardUrl, "_blank")}>
             Download

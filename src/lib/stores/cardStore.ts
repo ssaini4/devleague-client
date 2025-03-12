@@ -18,3 +18,12 @@ export function updateCardCache(username: string, type: CardType, url: string) {
     return cache;
   });
 }
+
+export function clearCacheForUsername(username: string) {
+  cardCache.update((cache) => {
+    if (cache[username]) {
+      delete cache[username];
+    }
+    return cache;
+  });
+}
