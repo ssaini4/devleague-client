@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class="flex justify-start items-center my-16 mx-20 max-w-[1200px]"
+  class="flex justify-start items-center my-16 md:mx-20 max-w-[1200px]"
   class:translate-y-[-100%]={!isVisible}
 >
   <a
